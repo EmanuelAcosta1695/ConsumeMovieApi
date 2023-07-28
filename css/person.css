@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1f1818;
+    background-color: rgb(255, 183, 48);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,32 +12,74 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    max-width: 1000px;
-    margin-top: 20px;
-    border: 1px solid #ccc;
+    min-width: 40%;
+    max-width: 60%;
+    max-height: 100%;
+    margin-top: 100px;
+    padding: 30px;
+    border: 1px solid black;
     border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Agrega una sombra */
+    background-color: rgb(247, 173, 35);
   }
   
   .image-container {
-    width: 200px;
-    margin: 20px;
+    width: 300px;
+    height: 450px;
+    margin-top: 60px;
+    margin-right: 30px;
+    margin-left: 30px;
+    min-width: 300px;
   }
   
   .image-container img {
     width: 100%;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
   }
   
   .details-container {
     flex: 1;
     padding: 20px;
+    height: 50%;
+    width: 100%;
   }
   
   .details-container h2 {
     margin-bottom: 10px;
+    font-size: 40px;
   }
   
   .details-container p {
     margin-bottom: 5px;
+    font-size: 20px;
   }
+
+
+/* ----------------- Corrousel --------------------*/
+
+.carousel-container {
+  display: flex; /* Cambiar a flex para mostrar las imágenes en una fila */
+  overflow-x: auto; /* Agregar scroll horizontal si el contenido excede el ancho del contenedor */
+  white-space: nowrap; /* Evitar que las imágenes se colapsen y aparezcan en una sola línea */
+  margin-left: 15px;
+}
+
+.movie-card {
+  flex: 0 0 auto; /* Evitar que las imágenes se estiren y mantengan su tamaño original */
+  margin-right: 10px; /* Espacio entre las imágenes */
+}
+
+.movie-card img {
+  width: 100px; /* Ancho deseado para cada imagen */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card p {
+  font-size: 12px; /* Ajusta el tamaño de fuente según tus preferencias */
+  max-width: 100px; /* Establece un ancho máximo para el párrafo */
+  overflow: hidden; /* Oculta el contenido que exceda el ancho máximo */
+  white-space: normal; /* Permite que el texto haga saltos de línea si excede el ancho máximo */
+  margin-top: 5px; /* Ajusta el margen superior según tus preferencias */
+}
