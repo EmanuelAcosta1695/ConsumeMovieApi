@@ -119,7 +119,16 @@ async function loadPersonDetails() {
         const biographyParagraph = document.getElementById("biography");
 
         // Mostrar u ocultar el botón "Ver más" según el contenido de la biografía
+        // scrollHeight -> devuelve la altura total del elemento
+        // clientHeight -> devuelve la altura visible del elemento
+        // compara las alturas del contenido total (scrollHeight) y el contenido visible del párrafo (clientHeight)
         showMoreButton.style.display = biographyParagraph.scrollHeight > biographyParagraph.clientHeight ? "block" : "none";
+
+        /*
+        Si la condición es verdadera (hay más contenido oculto), se establece showMoreButton.style.display en "block", 
+        lo que hace que el botón de "Mostrar más" sea visible en la página. Si la condición es falsa (todo el contenido es visible), 
+        se establece showMoreButton.style.display en "none", lo que oculta el botón de "Mostrar más" de la página.
+        */
 
         showMoreButton.addEventListener("click", () => {
           if (biographyParagraph.style.maxHeight === "none") {
